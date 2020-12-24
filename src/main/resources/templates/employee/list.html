@@ -1,0 +1,40 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<style type="text/css">
+
+table {
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px darkgray solid;
+}
+
+</style>
+</head>
+<body>
+<table>
+    <thead>
+        <tr>
+            <th>No</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Sex</th>
+            <th>Birthday</th>
+            <th>Mail Address</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr th:each="employee : *{employees}">
+            <td th:text="${employee.no}"></td>
+            <td th:text="${employee.firstName}"></td>
+            <td th:text="${employee.lastName}"></td>
+            <td th:text="${employee.sex}"></td>
+            <td th:text="${employee.birthday}"></td>
+            <td th:text="${employee.mailAddress}"></td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>
